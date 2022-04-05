@@ -33,8 +33,7 @@ echo "<br><br>";
 echo "Задание №4 <br><br>";
 $numbers = [];
 while(array_sum($numbers) < 100){
-    $randNumbers = rand(1, 9);
-    $numbers[] = $randNumbers;
+    $numbers[] =  rand(1, 9);
 }
 echo "Длина массива numbers = ".count($numbers);
 
