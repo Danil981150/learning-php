@@ -41,8 +41,8 @@ $cars = [
 // 2. Посчитайте и выведите стоимость стоимость всех машин
 echo "<b>Задание № 2</b> <br>";
 $allCarsSum = 0;
-for ($i = 0; $i < count($cars); $i++) {
-  $allCarsSum += $cars[$i]['price'];
+foreach($cars as $car) {
+  $allCarsSum += $car['price'];
 }
 echo $allCarsSum . "<br>";
 
@@ -51,24 +51,14 @@ echo $allCarsSum . "<br>";
 // Выведите итоговый массив $cars c помощью функции var_dump и убедитесь в его правильности.
 echo "<b>Задание № 3</b><br>";
 $colors = [
-  [
-    'color-name' => 'Желтый',
-    'color-price' => rand(0, 100)
-  ],
-  [
-    'color-name' => 'Черный',
-    'color-price' => rand(0, 100)
-  ],
-  [
-    'color-name' => 'Красный',
-    'color-price' => rand(0, 100)
-  ],
+  ["Желтый" => rand(0, 100)],
+  ["Черный" =>rand(0, 100)],
+  ["Красный" =>rand(0, 100)],
 ];
 
-for ($i = 0; $i < count($cars); $i++) {
-  $cars[$i]['colors'] = $colors;
+foreach($cars as $key => $car) {
+  $cars[$key]['colors'][] = $colors;
 }
-
 var_dump($cars);
 
 // 4. Каталог автомобилей.
@@ -77,8 +67,13 @@ var_dump($cars);
 // вместо {} поставьте соответственно: название автомобиля, цвет, стоимость в этом цвете.
 echo "<b>Задание № 4</b><br>";
 
-foreach($cars as $carName) {
-  echo "Купите автомобиль ".$carName['name']." цвета ".$carName['colors'][rand(0,2)]['color-name']." всего за: ".($carName['price'] + $carName['colors'][rand(0,2)]['color-price'])."<br>";
+foreach($cars as $car => $v) {
+  foreach($v as $key => $value) {
+    var_dump($value[1]);
+  }
+  echo "Купите автомобиль ". $v['name']." цвета "."<br>";
 }
 ?>
 </pre>
+
+<!-- echo "Купите автомобиль ".$carName['name']." цвета ".$carName['colors'][rand(0,2)]['color-name']." всего за: ".($carName['price'] + $carName['colors'][rand(0,2)]['color-price'])."<br>"; -->
