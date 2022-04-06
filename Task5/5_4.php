@@ -8,28 +8,28 @@
 // - Цена игрушки: случайное число от 100 до 1000
 $boringToys = [];
 
-for($i = 0; $i < rand(1,10); $i++){
-  $boringToys[] = ["name_toy" => "Игрушка ".($i + 1), "price_toy" => rand(100, 1000)];
-echo "Название игрушки: " . $boringToys[$i]["name_toy"] . " Цена игрушки: " . $boringToys[$i]["price_toy"]. "<br>";
+for ($i = 0; $i < rand(1, 10); $i++) {
+  $boringToys[] = ["name_toy" => "Игрушка " . ($i + 1), "price_toy" => rand(100, 1000)];
+  echo "Название игрушки: " . $boringToys[$i]["name_toy"] . " Цена игрушки: " . $boringToys[$i]["price_toy"] . "<br>";
 }
 
 // Дан массив $cars. Состоящий из трех машин со следующими данными: Мерседес - 10000 руб, BMW - 9999 руб, Автобус - 20000 руб.
 $cars = [
-    [
-        'name' => 'Мерседес',
-        'price' => 10000,
-        'colors' => [],
-    ],
-    [
-        'name' => 'BMW',
-        'price' => 9999,
-        'colors' => [],
-    ],
-    [
-        'name' => 'Автобус',
-        'price' => 20000,
-        'colors' => [],
-    ],
+  [
+    'name' => 'Мерседес',
+    'price' => 10000,
+    'colors' => [],
+  ],
+  [
+    'name' => 'BMW',
+    'price' => 9999,
+    'colors' => [],
+  ],
+  [
+    'name' => 'Автобус',
+    'price' => 20000,
+    'colors' => [],
+  ],
 ];
 
 
@@ -37,7 +37,7 @@ $cars = [
 echo "<br>";
 $allCarsSum = 0;
 
-foreach($cars as $car) {
+foreach ($cars as $car) {
   $allCarsSum += $car['price'];
 }
 
@@ -48,8 +48,8 @@ echo "<br>";
 // Создайте массив colors с цветами доступными для каждой машины. И случайным образом выберите из этого массива по 3 цвета для каждой машины. Эти цвета добавьте в массив $cars в поле colors. Для каждого цвета также укажите случайную надбавку к цене - случайное число от 0 до 100
 // Выведите итоговый массив $cars c помощью функции var_dump и убедитесь в его правильности.
 $colors = ["Красный", "Черный", "Желтый", "Синий", "Голубой", "Фиолетовый", "Оранжевый"];
-foreach($cars as $key => $val) {
-  for($i = 0; $i < 3; $i++){
+foreach ($cars as $key => $val) {
+  for ($i = 0; $i < 3; $i++) {
     $cars[$key]['colors'][] = [
       'name' => $colors[rand(0, count($colors) - 1)],
       'price' => rand(0, 100),
@@ -64,11 +64,10 @@ var_dump($cars);
 // "Купите автомобиль {} цвета {} всего за: {} руб"
 // вместо {} поставьте соответственно: название автомобиля, цвет, стоимость в этом цвете.
 
-foreach($cars as $key => $value){
-  var_dump($value);
-  foreach($value['colors'] as $color) {
+foreach ($cars as $key => $value) {
+  foreach ($value['colors'] as $color) {
+    echo "Купите автомобиль " . $value['name'] . " цвета " . $color['name'] . " всего за: " . ($value['price'] + $color['price']) . " руб." . "<br>";
   }
-  echo "Купите автомобиль ".$value['name']. " цвета ".$color['name']." всего за: ".($value['price'] + $color['price'])." руб."."<br>";
 }
 ?>
 </pre>
