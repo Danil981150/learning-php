@@ -12,7 +12,7 @@ require_once $_SERVER['DOCUMENT_ROOT']."/task7/app/core.php";
 <body class="bg-gray-400 font-sans leading-normal tracking-normal">
 
 <?php
-    // require_once $_SERVER['DOCUMENT_ROOT']."/task7/templates/navigation.php";
+    require_once $_SERVER['DOCUMENT_ROOT']."/task7/templates/navigation.php";
 
 ?>
 
