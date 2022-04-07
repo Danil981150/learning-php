@@ -1,6 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/Task7/app/core.php';
-// var_dump($_SERVER['DOCUMENT_ROOT'].'/Task7/app/core.php');
+require_once $_SERVER['DOCUMENT_ROOT'].'/task7/app/core.php';
 ?>
 <!doctype html>
 <html>
@@ -12,13 +11,13 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/Task7/app/core.php';
 </head>
 <body class="bg-gray-400 font-sans leading-normal tracking-normal">
 <?php
-    require_once $_SERVER['DOCUMENT_ROOT']."/Task7/templates/navigation.php";
+    require_once $_SERVER['DOCUMENT_ROOT'].'/task7/templates/navigation.php';
 ?>
 
 <div class="container shadow-lg mx-auto bg-white mt-24 md:mt-14 h-screen p-10">
 
 <?php 
-require_once $_SERVER['DOCUMENT_ROOT']."/Task7/templates/task_1_content.php";
+require_once $_SERVER['DOCUMENT_ROOT'].'/task7/templates/task_1_content.php';
 ?>
 
 </div>
