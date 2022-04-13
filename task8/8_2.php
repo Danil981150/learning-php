@@ -3,11 +3,10 @@
 
 // 1. Уберите слеши "/" в начале и в конце строки, если они есть
 $url = '/some/path/to/page/';
-// if(str_starts_with($url, '/') && str_ends_with($url, '/')){
-//     $newUrl = trim($url, '/');
-//     echo $newUrl;
-// }
-echo trim($url, '/');
+if(ltrim($url, '/') == true && rtrim($url, '/') == true){
+    $newUrl = trim($url, '/');
+    echo $newUrl;
+}
 
 // 2. Уберите из строки все запятые и точки, а пробелы замените на тире
 $line = 'Good news, everyone.';
